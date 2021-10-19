@@ -21,7 +21,14 @@ export class AppComponent {
     const subscription = source.subscribe((x:any) => {
       if (!this.started) return;
       this.time++;
+<<<<<<< HEAD
       this.timeValue =
+=======
+      console.log( this.time);
+      this.timeValue =
+        ('0' + Math.floor((this.time / 360) % 60)).slice(-2) +
+        ':' +
+>>>>>>> b08c8981ef6d85712e5b61ac477938f39a5fda6f
         ('0' + Math.floor((this.time / 60) % 60)).slice(-2) +
         ':' +
         ('0' + Math.floor(this.time % 60)).slice(-2);
@@ -43,7 +50,11 @@ export class AppComponent {
     const mouse$ = fromEvent(document.querySelectorAll('#waitBtn'), 'click')
 
     const buff$ = mouse$.pipe(
+<<<<<<< HEAD
       debounceTime(500),
+=======
+      debounceTime(250),
+>>>>>>> b08c8981ef6d85712e5b61ac477938f39a5fda6f
     )
 
     const click$ = mouse$.pipe(
